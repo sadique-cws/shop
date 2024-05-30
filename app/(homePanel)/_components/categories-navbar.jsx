@@ -1,27 +1,15 @@
+import { db } from "@/lib/db";
 import Link from "next/link";
-import { FaBagShopping,FaPhone } from "react-icons/fa6";
 
-const CategoriesNavbar = () => {
+const CategoriesNavbar = async () => {
 
-  const items = [
-    {
-      id: 1,
-      name: "Furniture",
-      Icon: FaBagShopping,
-    },
-    {
-      id: 2,
-      name: "Electronics",
-      Icon: FaPhone,
-    }
-  ]
+  const items = await db.category.findMany({});
   return (
-    <div className='h-auto flex-1 flex justify-center items-center p-4'>
+    <div className='h-auto flex-1 flex justify-center items-center py-2 px-4 bg-sky-800'>
 
       {items.map((cat, i) => (
-      <Link  href="" className="flex flex-col gap-y-2 items-center p-3">
-          <cat.Icon className="w-10 h-10 text-sky-600" />
-          <h5>{cat.name}</h5>
+      <Link key={i}  href="" className="flex flex-col gap-y-2 items-center px-3 text-white">
+          <h5>{cat.title}</h5>
         </Link>))}
 
     </div>

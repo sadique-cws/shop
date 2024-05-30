@@ -7,8 +7,8 @@ export default function Home() {
   return (
    <>
     <CategoriesNavbar/>
-    <BannerSection/>
-    <ProductSection/>
+    {/* <BannerSection/> */}
+    <ProductSection gridno={5}/>
    </>
   );
 }

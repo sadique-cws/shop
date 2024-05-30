@@ -1,10 +1,13 @@
 import Link from 'next/link'
 import React from 'react'
+import MobileSidebar from './mobile-sidebar'
+import NavbarRoutes from './navbar-routes'
 
 const AdminNavbar = () => {
   return (
-    <div className='bg-slate-900 flex-1 py-4 px-12'>
-        <Link href="" className='text-white'>Shop | Admin Panel</Link>
+    <div className=' items-center bg-white dark:bg-gray-900 text-gray-900 dark:text-slate-200 shadow-sm flex-1 border-b p-4 flex justify-between'>
+        <MobileSidebar/>
+        <NavbarRoutes/>
     </div>
   )
 }
